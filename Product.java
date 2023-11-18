@@ -6,6 +6,11 @@ public class Product {
     protected double price;
     protected String brand;
 
+    
+    public void getFullInfo() {
+        System.out.printf("Name:  %s%nPrice: %.2f%nBrand: %s%n", name, price, brand);
+    }
+    
     // Constructors, getters, and setters
     public Product(String name, double price, String brand) {
         this. name = name;
