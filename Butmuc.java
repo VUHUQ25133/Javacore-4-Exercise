@@ -5,13 +5,15 @@ public class Butmuc extends Product {
     private int id;
     private String penColor, penMaterial, penType, penSmooth;
 
-    public Butmuc(String name, double price, String brand, String penColor, String penMaterial, String penType, String penSmooth) {
-        super(name, price, brand);
-        this.penColor = penColor;
-        this.penMaterial = penMaterial;
-        this.penType = penType;
-        this.penSmooth = penSmooth;
+    @Override
+    public void getFullInfo() {
+        super.getFullInfo();
+        System.out.println("Pen Color: 	     " + penColor + "\n"
+        				+  "Pen Material:    " + penMaterial + "\n"
+        				+  "Ink Type: 	     " + penType + "\n"
+        				+  "Pen Smoothness:  " + penSmooth);
     }
+    
     public boolean containsKeyword(String keyword) {
         String productDetails = super.toString().toLowerCase() +
                                 " Pen Color: " + penColor +
@@ -21,6 +23,13 @@ public class Butmuc extends Product {
 
         return productDetails.contains(keyword) ||
                String.valueOf(getId()).equals(keyword);
+    }
+    public Butmuc(String name, double price, String brand, String penColor, String penMaterial, String penType, String penSmooth) {
+        super(name, price, brand);
+        this.penColor = penColor;
+        this.penMaterial = penMaterial;
+        this.penType = penType;
+        this.penSmooth = penSmooth;
     }
 
     // Getters and Setters
