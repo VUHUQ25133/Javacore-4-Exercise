@@ -6,14 +6,16 @@ public class Book extends Product {
     private String genre, author, publisher, language;
     private int publicationYear;
 
-    public Book(String name, double price, String brand, String genre, String author, String publisher, int publicationYear, String language) {
-        super(name, price, brand);
-        this.genre = genre;
-        this.author = author;
-        this.publisher = publisher;
-        this.publicationYear = publicationYear;
-        this.language = language;
+    @Override
+    public void getFullInfo() {
+        super.getFullInfo();
+        System.out.println("Genre:           " + genre + "\n"
+        				+  "Author: 		 " + author + "\n"
+        				+  "Publisher: 		 " + publisher + "\n"
+        				+  "Published Year:  " + publicationYear + "\n"
+        				+  "Language: 		 " + language);
     }
+    
     public boolean containsKeyword(String keyword) {
         String productDetails = super.toString().toLowerCase() +
                                 " Genre: " + genre +
@@ -24,6 +26,14 @@ public class Book extends Product {
 
         return productDetails.contains(keyword) ||
                String.valueOf(getId()).equals(keyword);
+    }
+    public Book(String name, double price, String brand, String genre, String author, String publisher, int publicationYear, String language) {
+        super(name, price, brand);
+        this.genre = genre;
+        this.author = author;
+        this.publisher = publisher;
+        this.publicationYear = publicationYear;
+        this.language = language;
     }
     // Getter & Setter
     public int getId() {
