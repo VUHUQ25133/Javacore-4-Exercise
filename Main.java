@@ -15,8 +15,9 @@ public class Main {
                 System.out.println("2. Delete product");
                 System.out.println("3. Edit product");
                 System.out.println("4. Search products");
-                System.out.println("5. Logout");
-                System.out.println("6. Exit");
+                System.out.println("5. Display All List");
+                System.out.println("6. Logout");
+                System.out.println("7. Exit");
 
                 // Nhập lựa chọn từ người dùng
                 System.out.print("Enter your choice: ");
@@ -38,9 +39,12 @@ public class Main {
                         libraryManager.searchProducts();
                         break;
                     case 5:
+                        libraryManager.displayProductList();
+                        break;
+                    case 6:
                     	libraryManager.logout();
                     	break;                    	
-                    case 6:
+                    case 7:
                         libraryManager.exit();
                         break;
                     default:
@@ -52,8 +56,9 @@ public class Main {
                 // Hiển thị menu chức năng
                 System.out.println("Select a function:");
                 System.out.println("1. Search products");
-                System.out.println("2. Logout");
-                System.out.println("3. Exit");
+                System.out.println("2. Display All List");
+                System.out.println("3. Logout");
+                System.out.println("4. Exit");
 
                 // Nhập lựa chọn từ người dùng
                 System.out.print("Enter your choice: ");
@@ -66,9 +71,12 @@ public class Main {
                 		libraryManager.searchProducts();
                 		break;
                 	case 2:
+                		libraryManager.displayProductList();
+                        break;
+                	case 3:
                 		libraryManager.logout();
                     	break;
-                	case 3:
+                	case 4:
                 		libraryManager.exit();
                 		break;
                 	default: 
