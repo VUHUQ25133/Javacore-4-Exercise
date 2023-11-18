@@ -41,9 +41,6 @@ public class Product {
         this.brand = brand;
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + name + "\nPrice: " + price + "\nBrand: " + brand;
-    }
+
 }
 
