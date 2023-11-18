@@ -6,11 +6,13 @@ public class Butchi extends Product {
     private int id;
     private String pencilColor, pencilMaterial, pencilHardness;
 
-    public Butchi(String name, double price, String brand, String pencilColor, String pencilMaterial, String pencilHardness) {
-        super(name, price, brand);
-        this.pencilColor = pencilColor;
-        this.pencilMaterial = pencilMaterial;
-        this.pencilHardness = pencilHardness;
+    
+    @Override
+    public void getFullInfo() {
+        super.getFullInfo();
+        System.out.println("Pencil Color:    " + pencilColor + "\n"
+        				+  "Pencil Material: " + pencilMaterial + "\n"
+        				+  "Pencil Hardness: " + pencilHardness);
     }
     public boolean containsKeyword(String keyword) {
         String productDetails = super.toString().toLowerCase() +
@@ -22,7 +24,12 @@ public class Butchi extends Product {
                String.valueOf(getId()).equals(keyword);
     }
 
-
+    public Butchi(String name, double price, String brand, String pencilColor, String pencilMaterial, String pencilHardness) {
+        super(name, price, brand);
+        this.pencilColor = pencilColor;
+        this.pencilMaterial = pencilMaterial;
+        this.pencilHardness = pencilHardness;
+    }
     // Getters and Setters
     public int getId() {
         return id;
