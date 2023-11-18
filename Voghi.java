@@ -7,14 +7,16 @@ public class Voghi extends Product {
     private int page;
     private String pageType, pageColor, pageMaterial, pageSize;
 
-    public Voghi(String name, double price, String brand, int page, String pageType, String pageColor, String pageMaterial, String pageSize) {
-        super(name, price, brand);
-        this.page = page;
-        this.pageType = pageType;
-        this.pageColor = pageColor;
-        this.pageMaterial = pageMaterial;
-        this.pageSize = pageSize;
+    @Override
+    public void getFullInfo() {
+        super.getFullInfo();
+        System.out.println("Page:      	     " + page + "\n"
+        				+  "Page Type: 	     " + pageType + "\n"
+        				+  "Page Color: 	 " + pageColor + "\n"
+        				+  "Page Material:   " + pageMaterial + "\n"
+        				+  "Page Size: 	     " + pageSize);
     }
+    
     public boolean containsKeyword(String keyword) {
         String productDetails = super.toString().toLowerCase() +
                                 " Page: " + page +
@@ -26,7 +28,14 @@ public class Voghi extends Product {
         return productDetails.contains(keyword) ||
                String.valueOf(getId()).equals(keyword);
     }
-
+    public Voghi(String name, double price, String brand, int page, String pageType, String pageColor, String pageMaterial, String pageSize) {
+        super(name, price, brand);
+        this.page = page;
+        this.pageType = pageType;
+        this.pageColor = pageColor;
+        this.pageMaterial = pageMaterial;
+        this.pageSize = pageSize;
+    }
     // Getters and Setters
     public int getId() {
         return id;
