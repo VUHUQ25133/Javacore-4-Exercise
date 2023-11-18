@@ -743,15 +743,38 @@ public class Manager {
 	         	return 2;
 	     	}
 	 	}
-	 
-	 	//Chức năng 6: Đăng xuất
+		
+		
+		//Chức năng 6: Hiển thị danh sách
+		void displayProductList() {
+		    System.out.println("Product List:");
+		    System.out.println("------");
+		    
+		    System.out.println("List of Voghi:");
+		    display(voghiList);
+		    System.out.println("List of Butchi:");
+		    display(butchiList);
+		    System.out.println("List of Butmuc:");
+		    display(butmucList);
+		    System.out.println("List of Book:");
+		    display(bookList);
+		}
+		protected void display(List<? extends Product> products) {
+		    for (Product product : products) {
+		        System.out.println("-----------------");
+		        product.getFullInfo();		        
+		    }
+		    System.out.println("-----------------");
+		}
+		
+	 	//Chức năng 7: Đăng xuất
 	 	void logout() {
 		    adminLoggedIn = false;
 		    System.out.println("Admin logged out successfully.");
 		    // Gọi lại hàm đăng nhập
 		    login();
 	 	}
-	 	// Chức năng 7: Thoát
+	 	// Chức năng 8: Thoát
 	 	void exit() {
 		    System.out.println("Exiting the program. Goodbye!");
 		    System.exit(0);
